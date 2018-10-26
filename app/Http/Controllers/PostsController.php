@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\requests\ValidationCheck;
 
 class PostsController extends Controller
 {
@@ -38,7 +39,7 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationCheck $request)
     {
         $post = Post::create();
 
@@ -78,8 +79,7 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
-    {
+    public function update(ValidationCheck $request, Post $post)    {
         $post->update($request->all());
     return redirect()->route('posts.show',[$post->id]);
     }

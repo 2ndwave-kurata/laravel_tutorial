@@ -1,7 +1,9 @@
 <html>
   <head>
-    <title>Blog - @yield('title')</title>
-    @yield('script')
+    <title>Blog - @yield('title')
+              @yield('script')
+    </title>
+  
   </head>
   <body>
     <div class="container">
