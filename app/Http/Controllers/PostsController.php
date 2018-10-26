@@ -41,13 +41,10 @@ class PostsController extends Controller
      */
     public function store(ValidationCheck $request)
     {
-        $post = Post::create();
+        $post = Post::create($request->all());
+        $post->save();　
 
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
-    
-        return redirect()->route('posts.show',[$post->id]);
+    return redirect()->route('posts.show',[$post->id]);
     }
 
     /**
