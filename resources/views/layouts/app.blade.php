@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Blog - @yield('title')</title>
+    @yield('script')
   </head>
   <body>
     <div class="container">
