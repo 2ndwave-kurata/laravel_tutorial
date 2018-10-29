@@ -42,11 +42,10 @@ class PostsController extends Controller
     public function store(ValidationCheck $request)
     {
         $post = Post::create($request->all());
-        $post->save();　
-
-    return redirect()->route('posts.show',[$post->id]);
+        $post ->save();
+    
+        return redirect()->route('posts.show',[$post->id]);
     }
-
     /**
      * Display the specified resource.
      *
