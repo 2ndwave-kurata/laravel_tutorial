@@ -15,14 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'auth'], 
-    function() {
+Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts','PostsController', ['only' => ['create','store','edit','update','destroy']]);
-    });
-    
-Route::resource('posts','PostsController',['only' => ['index','show']]);
-Route::resource('posts','PostsController');
+    Route::post('/comment','PostsController@comment');
+  });
+  Route::resource('posts','PostsController',['only' => ['index','show']]);
 
+Route::resource('posts','PostsController');
 
 Auth::routes();
 
