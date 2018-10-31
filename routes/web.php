@@ -23,7 +23,6 @@ Route::group(['middleware' => 'auth'], function() {
 
   //ログインしていなくても出来ること。
 Route::resource('posts','PostsController',['only' => ['index','show']]);
-Route::resource('posts','PostsController');
 
 //ログインのルーティング
 Auth::routes();
