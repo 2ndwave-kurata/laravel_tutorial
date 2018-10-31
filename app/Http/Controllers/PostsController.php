@@ -117,6 +117,6 @@ class PostsController extends Controller
         $post->delete();
         $comment = new Comment();
         $comment->where('post_id',$post->id)->delete();
-        return redirect()->route('posts.index')->with('message','記事および関連コメントの削除が完了しました。');
+        return redirect()->route('posts.index')->with('message', '記事および関連コメントの削除が完了しました。');
     }
 }

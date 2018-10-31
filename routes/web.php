@@ -15,14 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//ログインしていないと出来ないようにするルーティング
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts','PostsController', ['only' => ['create','store','edit','update','destroy']]);
     Route::post('/comment','PostsController@comment');
   });
-  Route::resource('posts','PostsController',['only' => ['index','show']]);
 
+  //ログインしていなくても出来ること。
+Route::resource('posts','PostsController',['only' => ['index','show']]);
 Route::resource('posts','PostsController');
 
+//ログインのルーティング
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

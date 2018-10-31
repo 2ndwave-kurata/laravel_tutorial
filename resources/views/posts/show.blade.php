@@ -2,6 +2,12 @@
 
 @section('title','記事詳細')
 
+@if(Session::has('message'))
+<div class="alert alert-success">
+  {{ session('message') }}
+</div>
+@endif 
+
 @section('content')
 <h1>{{ $posts->title }}</h1>
 <p>{{ $posts->content }}</p>
@@ -43,10 +49,5 @@
     ※コメントを行う場合はログインをする必要があります。
 </p>
 @endif
-@if(Session::has('message'))
-<div class="alert alert-success">
-  {{ session('message') }}
-</div>
-@endif 
 {{ link_to_route('posts.index','記事一覧へ戻る') }}
 @endsection

@@ -2,6 +2,12 @@
 
 @section('title','記事作成')
 
+@if(Session::has('message'))
+<div class="alert alert-success">
+  {{ session('message') }}
+</div>
+@endif 
+
 @section('content')
 <h1>記事作成</h1>
 
