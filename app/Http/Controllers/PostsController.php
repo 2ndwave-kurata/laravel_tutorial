@@ -18,8 +18,9 @@ class PostsController extends Controller
     {
         $post = new Post();
 
-        $posts = Post::latest()->get();
-    
+        //データベースにある記事のデータを取得してページネーション処理
+        $posts = Post::latest()->paginate(5);
+
         return view('posts.index',[
             'posts' => $posts
         ]);
@@ -48,6 +49,7 @@ class PostsController extends Controller
         $post ->save();
         $request->session()->flash('message','記事の登録が完了しました。');
         return redirect()->route('posts.show',[$post->id]);
+      
     }
     /**
      * Display the specified resource.
