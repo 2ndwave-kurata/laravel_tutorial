@@ -27,7 +27,7 @@
 <span class="text-danger">{{ $errors->first('content') }}</span>
 @endif
 </p>
-{{ Form::submit('作成',['class'=>'btn btn-primary btn-sm']) }}
+{{ Form::submit('作成',['class'=>'btn btn-primary btn-sm1']) }}
 {{ Form::close() }}
 
 {{ link_to_route('posts.index','記事一覧へ戻る') }}
