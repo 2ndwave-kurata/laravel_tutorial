@@ -35,15 +35,17 @@ margin-right:-700px;
 
 /*編集ボタン*/
 .btn.btn-primary.btn-sm{
-    padding-right:5px;
-    padding-left:5px;
+    padding:15px;
     margin:50px;
 }
 
 /*削除ボタン*/
 .btn.btn-danger.btn-sm{
-    padding:5px;
-    margin:10px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin:50px;
 }
 
 /*ページネーション*/
