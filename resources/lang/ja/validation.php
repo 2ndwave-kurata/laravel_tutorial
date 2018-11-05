@@ -121,6 +121,7 @@ return [
         'password'=>'パスワード',
         'title'=>'タイトル',
         'name'=>'名前',
+        'content'=>'内容',
     ],
 
 ];
