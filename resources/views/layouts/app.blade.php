@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'ブログ') }} </title>
+    <title>{{ config('app.name', 'Blog') }} </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/style.css') }}"rel="stylesheet">
 
     @yield('script')
 </head>
@@ -31,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel_TutorialBlogs') }}
+                        {{ config('app.name', 'Blog') }}
                     </a>
                 </div>
 
